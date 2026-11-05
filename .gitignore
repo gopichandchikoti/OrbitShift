@@ -1,0 +1,55 @@
+# --- Dependencies and build output -------------------------------------------------------------------------------
+node_modules/
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# --- Test, coverage and tool output ------------------------------------------------------------------------------
+coverage/
+.nyc_output/
+tests/e2e/output/
+playwright-report/
+test-results/
+.eslintcache
+.vite/
+.cache/
+
+# --- Logs --------------------------------------------------------------------------------------------------------
+*.log
+npm-debug.log*
+
+# --- Environment files and secrets (never commit these) ----------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+android/keystore.properties
+android/local.properties
+
+# --- Built APKs: transfer from artifacts/, never commit ----------------------------------------------------------
+artifacts/
+*.apk
+*.aab
+
+# --- Editors and operating systems -------------------------------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Scratch -----------------------------------------------------------------------------------------------------
+tmp/
+temp/
+*.tmp
+
+# Android device-check output (screenshots, console capture)
+tests/android/output/

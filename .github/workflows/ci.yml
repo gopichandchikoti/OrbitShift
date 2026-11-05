@@ -1,0 +1,28 @@
+# Quality gate on every push and pull request. Browser (Playwright) and Android checks need a browser/emulator and are
+# run locally; see README.md. This workflow has not been run on GitHub yet.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Level catalogue (schema, geometry, solution replay, distinctness)
+        run: npm run levels:check
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Lint (complexity, length and size limits)
+        run: npm run lint
+      - name: Unit and integration tests with the 90% coverage gate
+        run: npm run test:coverage
+      - name: Production build
+        run: npm run build

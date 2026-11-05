@@ -1,0 +1,52 @@
+{
+  "name": "orbit-shift",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Orbit Shift: a one-touch orbital gravity puzzle arcade game for the browser and Android.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "npm run levels:check && tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "node tests/e2e/run.mjs",
+    "levels:generate": "tsx scripts/levels/generate.ts",
+    "levels:check": "tsx scripts/levels/check.ts",
+    "levels:qa": "tsx scripts/levels/qa-manifest.ts",
+    "android:icons": "node scripts/make-android-icons.mjs",
+    "android:sync": "npm run build && cap sync android",
+    "android:apk:debug": "node scripts/build-apk.mjs",
+    "android:verify": "node tests/android/verify.mjs"
+  },
+  "dependencies": {
+    "@capacitor/app": "^8.1.2",
+    "@capacitor/core": "^8.6.0",
+    "@capacitor/haptics": "^8.0.2",
+    "@fontsource-variable/instrument-sans": "5.3.0",
+    "@fontsource/ibm-plex-mono": "5.3.0",
+    "@fontsource/instrument-serif": "5.3.0",
+    "phaser": "3.90.0"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^8.6.0",
+    "@capacitor/cli": "^8.6.0",
+    "@eslint/js": "^9.39.0",
+    "@types/node": "^22.10.0",
+    "@vitest/coverage-v8": "5.1.0",
+    "axe-core": "^4.14.0",
+    "eslint": "^9.39.0",
+    "eslint-plugin-sonarjs": "^4.2.2",
+    "jsdom": "^25.0.1",
+    "playwright-core": "^1.64.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.72.1",
+    "vite": "8.3.5",
+    "vitest": "5.1.0",
+    "zod": "^4.6.7"
+  }
+}
