@@ -5,6 +5,7 @@ A one-touch orbital gravity puzzle arcade game: **120 levels in 12 chapters**, p
 planetary gravity to reach the portal while avoiding hazards.
 
 Version **1.0.0** · Android package `com.portfolio.orbitshift` · Phaser 3.90 · TypeScript · Vite · Capacitor 8
+**Live demo:** https://orbit-shift.vercel.app
 
 | | | |
 |:-:|:-:|:-:|
